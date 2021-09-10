@@ -1,3 +1,5 @@
+# 手写代码之 promise
+
 ```js
 const PENDING =  'pending';//初始态
 const FULFILLED =  'fulfilled';//初始态
@@ -150,4 +152,3 @@ Promise.prototype.then = function(onFulfilled,onRejected){
   }
 }
 ```
-
