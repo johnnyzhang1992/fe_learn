@@ -19,4 +19,3 @@ Curent Fiber 和 workInprogress Fiber
 异步调度过程，如下图所示：
 
 ![3.jpeg](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/429a103a732e42b69b6cd9a32f1d265a~tplv-k3u1fbpfcp-watermark.awebp)
-
