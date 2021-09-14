@@ -151,8 +151,6 @@ function MyComponent() {
 
 ## 父组件和子组件 componentDidMount 哪个先执行
 
-![屏幕快照 2019-05-25 下午8.55.32](../../学习部分/react/assets/屏幕快照 2019-05-25 下午 8.55.32.png)
-
 当父组件 `render` 时遇到子组件，然后进入子组件的生命周期，当执行完子组件生命周期中的`componentDidMount` 时会回到父组建继续执行父组建未完成的生命周期。
 
 ```js
