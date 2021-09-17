@@ -1,47 +1,118 @@
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.section {
+				margin-bottom: 20px;
+				border: 1px solid red;
+			}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .section{
-            margin-bottom: 20px;
-            border: 1px solid red;
-        }
-        .clearfix::after{
-            display: block;
-            content: ' ';
-            clear: both;
-            height: 0;
-            visibility: hidden;
-        }
-        .clearfix::after{
-            *zoom:1; /* 兼容 ie低版本*/
-        }
-    </style>
-</head>
+			.clearfix::after {
+				display: block;
+				content: " ";
+				clear: both;
+				height: 0;
+				visibility: hidden;
+			}
 
-<body>
-    <!-- 浮动问题 -->
-    <!-- 方法一 -->
-    <div class="section" style="overflow: hidden;">
-        <div style="float:left;width:40px;height:40px;background-color: orange;"></div>
-        <div style="float:right;width:40px;height:40px;background-color: #ddd;"></div>
-        <div></div>
-    </div>
-    <!-- 方法二 -->
-    <div class="section">
-        <div style="float:left;width:40px;height:40px;background-color: orange;"></div>
-        <div style="float:right;width:40px;height:40px;background-color: #ddd;"></div>
-        <div style="clear: both;"></div>
-    </div>
-    <!-- 方法三 -->
-    <div class="section clearfix">
-        <div style="float:left;width:40px;height:40px;background-color: orange;"></div>
-        <div style="float:right;width:40px;height:40px;background-color: #ddd;"></div>
-    </div>
-</body>
+			.clearfix::after {
+				*zoom: 1;
+				/* 兼容 ie低版本*/
+			}
+		</style>
+	</head>
 
+	<body>
+		<!-- 浮动问题 -->
+		<!-- 方法一 -->
+		<div class="section" style="overflow: hidden">
+			<div
+				style="float: left; width: 40px; height: 40px; background-color: orange"
+			></div>
+			<div
+				style="float: right; width: 40px; height: 40px; background-color: #ddd"
+			></div>
+			<div></div>
+		</div>
+		<!-- 方法二 -->
+		<div class="section">
+			<div
+				style="float: left; width: 40px; height: 40px; background-color: orange"
+			></div>
+			<div
+				style="float: right; width: 40px; height: 40px; background-color: #ddd"
+			></div>
+			<div style="clear: both"></div>
+		</div>
+		<!-- 方法三 -->
+		<div class="section clearfix">
+			<div
+				style="float: left; width: 40px; height: 40px; background-color: orange"
+			></div>
+			<div
+				style="float: right; width: 40px; height: 40px; background-color: #ddd"
+			></div>
+		</div>
+		<!-- 左右布局 -->
+		<h2>flex 布局</h2>
+		<div class="section clearfix" style="display: flex; height: 200px">
+			<div
+				class="left"
+				style="width: 200px; flex-basis: 200px; background-color: orange"
+			></div>
+			<div class="right" style="flex: 1; background-color: orchid"></div>
+		</div>
+		<h2>float</h2>
+		<div class="section clearfix" style="height: 200px">
+			<div
+				class="left"
+				style="
+					width: 200px;
+					height: 100%;
+					float: left;
+					background-color: orange;
+				"
+			></div>
+			<div
+				class="right"
+				style="
+					background-color: orchid;
+					width: auto;
+					margin: 0 auto;
+					height: 100%;
+				"
+			></div>
+		</div>
+		<h2>position</h2>
+		<div class="section clearfix" style="height: 200px; position: relative">
+			<div
+				class="left"
+				style="
+					width: 200px;
+					height: 100%;
+					float: left;
+					background-color: orange;
+				"
+			></div>
+			<div
+				class="right"
+				style="
+					background-color: orchid;
+					width: auto;
+					margin: 0 auto;
+					height: 100%;
+					position: absolute;
+					left: 200px;
+					right: 0;
+					top: 0;
+					bottom: 0;
+				"
+			></div>
+		</div>
+        <!-- calc -->
+        <h2>calc(100%-200px)</h2>
+	</body>
 </html>
