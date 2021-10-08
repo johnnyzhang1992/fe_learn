@@ -1,5 +1,7 @@
 # 手写代码之 promise
 
+## 手写 Promise
+
 ```js
 const PENDING =  'pending';//初始态
 const FULFILLED =  'fulfilled';//初始态
@@ -152,3 +154,25 @@ Promise.prototype.then = function(onFulfilled,onRejected){
   }
 }
 ```
+
+## 使用Promise进行顺序（sequence）处理
+
+1、使用async函数配合await或者使用generator函数配合yield。
+2、使用promise.then通过for循环或者Array.prototype.reduce实现。
+
+```js
+function sequenceTasks(tasks) {
+    function recordValue(results, value) {
+        results.push(value);
+        return results;
+    }
+    var pushValue = recordValue.bind(null, []);
+    return tasks.reduce(function (promise, task) {
+        return promise.then(() => task).then(pushValue);
+    }, Promise.resolve());
+}
+```
+
+## 相关文章
+
+>[Promise知识汇总和面试情况](https://mp.weixin.qq.com/s?__biz=MzU4NDA1ODcwNA==&mid=2247494772&idx=2&sn=2be953a6916770c268163ff73230cfea&chksm=fd9d3e4bcaeab75df8e2544e3646d55e490e5601f2dc2c53e4a732017896fd37586f5d834da2&scene=132#wechat_redirect)

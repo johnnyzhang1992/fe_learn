@@ -1,105 +1,131 @@
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<style>
-			.section {
-				margin-bottom: 20px;
-				border: 1px solid red;
-			}
 
-			.clearfix::after {
-				display: block;
-				content: " ";
-				clear: both;
-				height: 0;
-				visibility: hidden;
-			}
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<style>
+		.section {
+			margin-bottom: 20px;
+			border: 1px solid red;
+		}
 
-			.clearfix::after {
-				*zoom: 1;
-				/* 兼容 ie低版本*/
-			}
-		</style>
-	</head>
+		.clearfix::after {
+			display: block;
+			content: " ";
+			clear: both;
+			height: 0;
+			visibility: hidden;
+		}
 
-	<body>
-		<!-- 浮动问题 -->
-		<!-- 方法一 -->
-		<div class="section" style="overflow: hidden">
-			<div
-				style="float: left; width: 40px; height: 40px; background-color: orange"
-			></div>
-			<div
-				style="float: right; width: 40px; height: 40px; background-color: #ddd"
-			></div>
-			<div></div>
-		</div>
-		<!-- 方法二 -->
-		<div class="section">
-			<div
-				style="float: left; width: 40px; height: 40px; background-color: orange"
-			></div>
-			<div
-				style="float: right; width: 40px; height: 40px; background-color: #ddd"
-			></div>
-			<div style="clear: both"></div>
-		</div>
-		<!-- 方法三 -->
-		<div class="section clearfix">
-			<div
-				style="float: left; width: 40px; height: 40px; background-color: orange"
-			></div>
-			<div
-				style="float: right; width: 40px; height: 40px; background-color: #ddd"
-			></div>
-		</div>
-		<!-- 左右布局 -->
-		<h2>flex 布局</h2>
-		<div class="section clearfix" style="display: flex; height: 200px">
-			<div
-				class="left"
-				style="width: 200px; flex-basis: 200px; background-color: orange"
-			></div>
-			<div class="right" style="flex: 1; background-color: orchid"></div>
-		</div>
-		<h2>float</h2>
-		<div class="section clearfix" style="height: 200px">
-			<div
-				class="left"
-				style="
+		.clearfix::after {
+			*zoom: 1;
+			/* 兼容 ie低版本*/
+		}
+
+		#left_self,
+		#right_self {
+			width: 200px;
+			height: 200px;
+			background-color: #ffe6b8
+		}
+
+		#left_self {
+			float: left;
+		}
+
+		#right_self {
+			float: right;
+		}
+
+		#center_self {
+			margin: 0 210px;
+			height: 200px;
+			background-color: #a0b3d6
+		}
+
+		#wrap {
+			width: 100%;
+			height: 100px;
+			background-color: #fff;
+			float: left;
+		}
+
+		#wrap #center {
+			margin: 0 210px;
+			height: 100px;
+			background-color: #ffe6b8;
+		}
+
+		#left_margin,
+		#right_margin {
+			float: left;
+			width: 200px;
+			height: 100px;
+			background-color: darkorange
+		}
+
+		#left_margin {
+			margin-left: -100%;
+			background-color: lightpink
+		}
+
+		#right_margin {
+			margin-left: -200px;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 浮动问题 -->
+	<!-- 方法一 -->
+	<div class="section" style="overflow: hidden">
+		<div style="float: left; width: 40px; height: 40px; background-color: orange"></div>
+		<div style="float: right; width: 40px; height: 40px; background-color: #ddd"></div>
+		<div></div>
+	</div>
+	<!-- 方法二 -->
+	<div class="section">
+		<div style="float: left; width: 40px; height: 40px; background-color: orange"></div>
+		<div style="float: right; width: 40px; height: 40px; background-color: #ddd"></div>
+		<div style="clear: both"></div>
+	</div>
+	<!-- 方法三 -->
+	<div class="section clearfix">
+		<div style="float: left; width: 40px; height: 40px; background-color: orange"></div>
+		<div style="float: right; width: 40px; height: 40px; background-color: #ddd"></div>
+	</div>
+	<!-- 左右布局 -->
+	<h2>flex 布局</h2>
+	<div class="section clearfix" style="display: flex; height: 200px">
+		<div class="left" style="width: 200px; flex-basis: 200px; background-color: orange"></div>
+		<div class="right" style="flex: 1; background-color: orchid"></div>
+	</div>
+	<h2>float</h2>
+	<div class="section clearfix" style="height: 200px">
+		<div class="left" style="
 					width: 200px;
 					height: 100%;
 					float: left;
 					background-color: orange;
-				"
-			></div>
-			<div
-				class="right"
-				style="
+				"></div>
+		<div class="right" style="
 					background-color: orchid;
 					width: auto;
 					margin: 0 auto;
 					height: 100%;
-				"
-			></div>
-		</div>
-		<h2>position</h2>
-		<div class="section clearfix" style="height: 200px; position: relative">
-			<div
-				class="left"
-				style="
+				"></div>
+	</div>
+	<h2>position</h2>
+	<div class="section clearfix" style="height: 200px; position: relative">
+		<div class="left" style="
 					width: 200px;
 					height: 100%;
 					float: left;
 					background-color: orange;
-				"
-			></div>
-			<div
-				class="right"
-				style="
+				"></div>
+		<div class="right" style="
 					background-color: orchid;
 					width: auto;
 					margin: 0 auto;
@@ -109,10 +135,30 @@
 					right: 0;
 					top: 0;
 					bottom: 0;
-				"
-			></div>
+				"></div>
+	</div>
+	<!-- calc -->
+	<h2>calc(100%-200px)</h2>
+	<!-- 三列布局 -->
+	<div class="section" style="height: 200px;">
+		<div class="left" style="float: left;"></div>
+		<div class="middle"></div>
+		<div class="right" style="float:right"></div>
+	</div>
+	<div class="section">
+		<h3>使用自身浮动法定位</h3>
+		<div id="left_self">我是左边</div>
+		<div id="right_self">我是右边</div>
+		<div id="center_self">我是中间</div>
+	</div>
+	<div class="section clearfix">
+		<h3>使用margin负值法进行布局:圣杯布局</h3>
+		<div id="wrap">
+			<div id="center"></div>
 		</div>
-        <!-- calc -->
-        <h2>calc(100%-200px)</h2>
-	</body>
+		<div id="left_margin"></div>
+		<div id="right_margin"></div>
+	</div>
+</body>
+
 </html>
