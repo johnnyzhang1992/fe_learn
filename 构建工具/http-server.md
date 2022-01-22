@@ -1,24 +1,24 @@
-# Installing globally:
+# Installing globally
 
 Installation via `npm`:
 
-```
+```bash
  npm install http-server -g
 ```
 
 This will install `http-server` globally so that it may be run from the command line.
 
-## Usage:
+## Usage
 
-```
+```bash
  http-server [path] [options]
 ```
 
 `[path]` defaults to `./public` if the folder exists, and `./` otherwise.
 
-*Now you can visit http://localhost:8080 to view your server*
+_Now you can visit <http://localhost:8080> to view your server_
 
-## Available Options:
+## Available Options
 
 `-p` Port to use (defaults to 8080)
 
@@ -50,20 +50,20 @@ This will install `http-server` globally so that it may be run from the command 
 
 `-K` or `--key` Path to ssl key file (default: key.pem).
 
-`-r` or `--robots` Provide a /robots.txt (whose content defaults to 'User-agent: *\nDisallow: /')
+`-r` or `--robots` Provide a /robots.txt (whose content defaults to 'User-agent: \*\nDisallow: /')
 
 `-h` or `--help` Print this list and exit.
 
-# Development
+## Development
 
 Checkout this repository locally, then:
 
-```
-$ npm i
-$ node bin/http-server
+```bash
+npm i
+node bin/http-server
 ```
 
-*Now you can visit http://localhost:8080 to view your server*
+_Now you can visit <http://localhost:8080> to view your server_
 
 You should see the turtle image in the screenshot above hosted at that URL. See the `./public`folder for demo content.
 
