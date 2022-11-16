@@ -4,8 +4,8 @@
 
 ```js
 const PENDING =  'pending';//初始态
-const FULFILLED =  'fulfilled';//初始态
-const REJECTED =  'rejected';//初始态
+const FULFILLED =  'fulfilled';//完成态
+const REJECTED =  'rejected';//拒绝态
 function Promise(executor){
   let self = this;//先缓存当前promise实例
   self.status = PENDING;//设置状态
