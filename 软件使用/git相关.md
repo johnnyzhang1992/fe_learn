@@ -2,7 +2,7 @@
 
 ```bash
 # 查看全局git设置
-git config --global --list 
+git config --global --list
 git config --global user.name "johnnyzhang"
 git config --global user.email "a@b.com"
 
@@ -14,7 +14,7 @@ git pull origin develop --allow-unrelated-histories
 # 关联本地和远程分支
 git branch --set-upstream-to=origin/master master
 # 查看所有分支 本地加远程
-git branch -a 
+git branch -a
 # 查看本地所有分支
 git branch
 #切换本地分支
@@ -26,9 +26,9 @@ git init
 git remote -v
 git remote add origin "远程仓库地址"
 # 删除远程仓库关联
-git remote remove origin 
+git remote remove origin
 # 重置地址
-git remote set-url origin "远程仓库地址" 
+git remote set-url origin "远程仓库地址"
 
 # 当远程仓库内分支已删除，本地对应分支仍存在是
 git fetch origin --prune
