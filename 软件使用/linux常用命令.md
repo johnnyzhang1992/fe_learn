@@ -1,3 +1,5 @@
+# linux 常用命令
+
 ```bash
 # 删除文件
 rm -rf /  ;lunix
@@ -30,4 +32,3 @@ scp root@197.2.2.1:/xxx/xxx.xxx  e:/test/
 2.从本地上传文件到服务器
 scp e:/test/test.log  root@197.2.2.1:/text
 ```
-
