@@ -1,3 +1,5 @@
+# React 基础概念
+
 ## #1: React皆组件
 
 React按照可复用组件的概念来设计的。定义一个个的小组件，然后组装成大组件。
@@ -6,7 +8,7 @@ React按照可复用组件的概念来设计的。定义一个个的小组件，
 
 一个组件，从形式上看就是一个普通的JS函数：
 
-```java
+```jsx
 // 例1
 // https://jscomplete.com/repl?j=Sy3QAdKHW
 function Button (props) {
@@ -31,7 +33,7 @@ ReactDOM.render 的第二个参数是React会覆盖和监控的目标元素。
 
 上面的例子例1可以用纯react.js实现,而不用jsx:
 
-```java
+```jsx
 // 例2 -  React component without JSX
 // https://jscomplete.com/repl?j=HyiEwoYB-
 function Button (props) {
@@ -56,7 +58,7 @@ createElement函数是React顶级API的主要函数。也是7大API中所需要�
 
 举个例子
 
-```java
+```jsx
 // 例3 -  React’s createElement API
 // https://jscomplete.com/repl?j=r1GNoiFBb
 const InputForm = React.createElement(
@@ -82,13 +84,13 @@ ReactDOM.render(InputForm, mountNode);
 
 1. 因为InputForm不是React组件，只是React元素。所以我们直接用ReactDOM.render来调用InputForm，而不是（注意和例1的对比）。
 2. React.createElement 函数在前两个参数后面接收了多个参数. 他从第三个起的参数列表 由一个该组件的子组件构成的列表.
-3. 由于 React.createElement 都是 JavaScript所以我们可以嵌套调用.当该元素没有属性或者Props的时候，该函数的第二个参数可以是null或者是一个空的对象.
+3. 由于 React.createElement 都是 javaScript所以我们可以嵌套调用.当该元素没有属性或者Props的时候，该函数的第二个参数可以是null或者是一个空的对象.
 4. 我们可以将HTML元素和React组件一起混用，你就把HTML想象为React的内置组件就可以了.
 5. React 的API设计会尽可能的河DOM API接近，这也是为什么在 Input 元素中我们要用className而不是class的原因. 私下里,我们都希望React API可以变成DOM API的一部分，那就太好了.
 
 上面的代码当引入了React库后浏览器是可以理解的，浏览器不能直接解析JSX. 然而我们开发者喜欢跟HMTL打交道而不是createElment（想象一下，整个页面用document.createElement来创建的情景，辣眼睛）. 这就是JSX存在的意义，以其用React.createElement来构建页面，我们更愿意使用一种和HTML更相近的语法:
 
-```java
+```jsx
 // 例4 - JSX (compare with 例3)
 // https://jscomplete.com/repl?j=SJWy3otHW
 const InputForm =
@@ -124,8 +126,8 @@ ReactDOM.render(InputForm, mountNode);
 
 在JSX里面，你可以使用带有花括号的JS表达式：
 
-```java
-// 例5 -  Using JavaScript expressions in JSX
+```jsx
+// 例5 -  Using javaScript expressions in JSX
 // https://jscomplete.com/repl?j=SkNN3oYSW
 const RandomValue = () => 
   <div>
@@ -135,7 +137,7 @@ const RandomValue = () =>
 ReactDOM.render(<RandomValue />, mountNode);
 ```
 
-任何JS表达式都可以放到花括号里面，这有点像[JS字符串模版](http://link.zhihu.com/?target=https%3A//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)里面的${} 插值语法.
+任何JS表达式都可以放到花括号里面，这有点像[JS字符串模版](http://link.zhihu.com/?target=https%3A//developer.mozilla.org/en-US/docs/Web/javaScript/Reference/Template_literals)里面的${} 插值语法.
 
 唯一的约束是：只能是JS表达式，比如：if 语句不能使用了，但是你可以用三元表达式来代替.
 
@@ -143,7 +145,7 @@ JS变量是表达式，所以当组件接收到Props列表（除了随机数外�
 
 JS对象也同样是表达式。有时候我们在花括号里面使用JS对象，从表现上来看是一个双括号，但这实际上就是一个放在花括号里面的对象而已。比如，我们可以在React的特殊样式属性中传入一个CSS样式对象:
 
-```java
+```jsx
 // 例6 - An object passed to the special React style prop
 // https://jscomplete.com/repl?j=S1Kw2sFHb
 const ErrorDisplay = ({message}) =>
@@ -204,10 +206,10 @@ ReactDOM.render(<Doubler />, mountNode);
 
 ## #4: 你可以用JS class 来写React组件
 
-简单函数组件只能满足简单需求，但实际开发中我们需要更复杂的组件。 React 支持通过[class语法](http://link.zhihu.com/?target=https%3A//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)来写组件. 这里给出上面的Button例子的改写:
+简单函数组件只能满足简单需求，但实际开发中我们需要更复杂的组件。 React 支持通过[class语法](http://link.zhihu.com/?target=https%3A//developer.mozilla.org/en-US/docs/Web/javaScript/Reference/Classes)来写组件. 这里给出上面的Button例子的改写:
 
-```java
-// 例9 - Creating components using JavaScript classes
+```jsx
+// 例9 - Creating components using javaScript classes
 // https://jscomplete.com/repl?j=ryjk0iKHb
 class Button extends React.Component {
   render() {
@@ -224,7 +226,7 @@ class语法很简答. 定义一个继承自React.Component（另一个顶级Reac
 
 既然我们有一个和单一组件使用有关的实例，那么我们可以按照意愿修改该实例。例如：
 
-```java
+```jsx
 // 例10 -  Customizing a component instance
 // https://jscomplete.com/repl?j=rko7RsKS-
 class Button extends React.Component {
@@ -242,7 +244,7 @@ ReactDOM.render(<Button label="Save" />, mountNode);
 
 我们也可以自定义属性方法并在组件任何地方使用它:
 
-```java
+```jsx
 // 例11 — Using class properties
 // https://jscomplete.com/repl?j=H1YDCoFSb
 class Button extends React.Component {

@@ -1,5 +1,8 @@
 # React 概述
 
+> 官网：<https://zh-hans.reactjs.org/>
+> 新版官网：<https://beta.reactjs.org/>
+
 React 的核心思想是：封装组件。
 
 各个组件维护自己的状态和 UI，当状态变更，自动重新渲染整个组件。
@@ -30,3 +33,13 @@ React 应用都是构建在组件之上。
 ## Data Flow
 
 “单向数据绑定”是 React 推崇的一种应用架构的方式。当应用足够复杂时才能体会到它的好处，虽然在一般应用场景下你可能不会意识到它的存在，也不会影响你开始使用 React，你只要先知道有这么个概念。
+
+## 周边生态
+
+- Ant Design: <https://ant.design/> 5.0
+- Ant Design Mobile: <https://mobile.ant.design/>
+- TDesign: <https://tdesign.tencent.com/react/getting-started> 1.0
+- 服务端渲染框架：next.js (star:102K) <https://github.com/vercel/next.js>
+- 跨端解决方案：taro（start:32.5K）<https://github.com/NervJS/taro>
+- 开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发微信/京东/百度/支付宝/字节跳动/ QQ 小程序/H5/React Native 等应用。
+- 构建原生应用：React Native（star: 108K） <https://github.com/facebook/react-native>
