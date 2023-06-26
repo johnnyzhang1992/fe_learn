@@ -36,6 +36,7 @@ React 应用都是构建在组件之上。
 
 ## 周边生态
 
+- nextjs 一个用于构建 Web 应用程序的框架 <https://github.com/vercel/next.js>
 - Ant Design: <https://ant.design/> 5.0
 - Ant Design Mobile: <https://mobile.ant.design/>
 - TDesign: <https://tdesign.tencent.com/react/getting-started> 1.0
