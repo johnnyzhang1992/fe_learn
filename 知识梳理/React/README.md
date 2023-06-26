@@ -36,6 +36,7 @@ React 应用都是构建在组件之上。
 
 ## 周边生态
 
+- react-i18next 国际化多语言 <https://github.com/i18next/react-i18next>
 - nextjs 一个用于构建 Web 应用程序的框架 <https://github.com/vercel/next.js>
 - Ant Design: <https://ant.design/> 5.0
 - Ant Design Mobile: <https://mobile.ant.design/>
