@@ -5,8 +5,20 @@
 ```bash
 # 进入某个目录
 cd ~/.ssh
+
+# gitHub配置ssh示例：
+ssh-keygen -t rsa -C "git账号"
+# 将生成的公钥添加到github 后台
+# github—>setting→SSH and GPG keys—>添加—>复制粘贴
+ssh -T git@github.com # 验证是否配置成功
 # ssh 相关
 # 修改 config 文件，新增 hostname 配置等
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa # 私钥
+# 将私钥添加到ssh-agent ，并将密码存储到秘钥链中
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
 ```
 
 ## 修改 hosts 文件

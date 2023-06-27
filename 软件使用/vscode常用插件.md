@@ -7,6 +7,7 @@
 - Code formatter
 - Beautify
 - Open in browser
+- CodeMetrics [圈复杂度检测]
 
 ## 实用工具
 
