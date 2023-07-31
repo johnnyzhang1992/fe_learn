@@ -1,5 +1,7 @@
 # webpack 相关
 
+![webpack](image.png)
+
 ## Webpack面试问题
 
 ### 1、webpack打包原理
