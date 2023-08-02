@@ -16,11 +16,11 @@ React hooks: not magic, just arrays
 
 class组件, 它是一个实例. 实例化了以后, 内部会有它自己的状态. 而对于function来说, 它本身是一个方法, 是无状态的. 所以在class的state, 是可以保存的. 而function的state则依赖其它的方式保存它的状态, 比如hooks.
 
- **相同点：**
+**相同点：**
 
 - 首先从原理角度出发，setState和 useState 更新视图，底层都调用了 scheduleUpdateOnFiber 方法，而且事件驱动情况下都有批量更新规则。
 
-**不同点**
+**不同点：**
 
 - 在不是 pureComponent 组件模式下， setState 不会浅比较两次 state 的值，只要调用 setState，在没有其他优化手段的前提下，就会执行更新。但是 useState 中的 dispatchAction 会默认比较两次 state 是否相同，然后决定是否更新组件。
 - setState 有专门监听 state 变化的回调函数 callback，可以获取最新state；但是在函数组件中，只能通过 useEffect 来执行 state 变化引起的副作用。
