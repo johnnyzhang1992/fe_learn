@@ -91,3 +91,52 @@ useEffect 的依赖数组，第二次变化时，执行上次的返回函数。�
 ## 学习图谱
 
 ![image-20210701183004995](hooks.assets/image-20210701183004995.png)
+
+### 生命周期
+
+![hooks lifecycle](hooks.assets/lifecycle_1.png)
+
+![Hooks 生命周期](hooks.assets/lifecycle.png)
+
+#### 挂载
+
+正如上图中看到的，挂载阶段按照下面的顺序执行：
+
+- 首先 react 运行 （惰性初始化程序）
+- 第一次渲染
+- React 更新 DOM
+- 运行 LayoutEffects
+- 浏览器绘制屏幕
+- 运行 Effects
+
+这里发生了什么？ 首先是惰性初始化器，然后 React 进行第一次渲染并更新 DOM，然后 React 运行 LayoutEffects。下一个活动是浏览器屏幕绘制，最后 React 运行 Effects。
+
+#### 更新
+
+在每次更新时，React都会从由 state 或 props 变化引起的重新渲染开始。现在就没有惰性的初始化调用了。
+
+- render
+- React 更新 DOM
+- 清除 LayoutEffects
+- 运行 LayoutEffects
+- 浏览器绘制屏幕
+- 清理 Effects
+- 运行 Effects
+
+注意，在渲染之后，React 清理了 LayoutEffects，使其紧接着运行。浏览器然后绘制屏幕，之后React清理 Effects 并紧接着运行它。
+
+挂载和更新之间的主要区别是：
+
+- 惰性初始化仅在挂载时
+- 挂载阶段不存在清理工作
+
+#### 卸载
+
+在卸载期间，React 清理所有效果：
+
+- 清理 LayoutEffects
+- 清理 Effects
+
+> 作者：_你当像鸟飞往你的山
+> 链接：<https://juejin.cn/post/7218942994467389498>
+> 来源：稀土掘金
