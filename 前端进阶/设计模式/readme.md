@@ -5,45 +5,45 @@
 设计模式是一套被反复使用的、多数人知晓的、经过分类编目的、代码设计经验的总结
 设计模式是为了重用代码、让代码更容易被理解、保证代码可靠性。
 
-## 创建型模式 6
+## 创建型模式
 
 提供了一种在创建对象的同时隐藏创建逻辑的方式，而不是使用 new 运算符直接实例化对象。
 这使得程序在判断针对某个给定实例需要创建哪些对象时更加灵活。
 
-1、简单工程模式 Simple Factory （4）重要程度，满分5
-2、工厂方法模式 Factory Method（5）
-3、抽象工厂模式 Abstract Factory（5）
-4、建造者模式 Builder（2）
-5、原型模式 Prototype（3）
-6、单例模式 Singleton（4）
+- 1、简单工程模式 Simple Factory （4）重要程度，满分5
+- 2、工厂方法模式 Factory Method（5）
+- 3、抽象工厂模式 Abstract Factory（5）
+- 4、建造者模式 Builder（2）
+- 5、原型模式 Prototype（3）
+- 6、单例模式 Singleton（4）
 
-## 结构型模式 7
+## 结构型模式
 
 关注类和对象的组合。继承的概念被用来组合接口和定义组合对象获得新功能的方式。
 
-1、适配器模式 Adapter（4）
-2、桥接模式 Bridge（2）
-3、组合模式 Composite（4）
-4、装饰模式 Decorator（3）
-5、外观模式 Facade（5）
-6、享元模式 Flyweight（1）
-7、代理模式 Proxy（4）
+- 1、适配器模式 Adapter（4）
+- 2、桥接模式 Bridge（2）
+- 3、组合模式 Composite（4）
+- 4、装饰模式 Decorator（3）
+- 5、外观模式 Facade（5）
+- 6、享元模式 Flyweight（1）
+- 7、代理模式 Proxy（4）
 
-## 行为型模式 11
+## 行为型模式
 
 这些设计模式特别关注对象之间的通信。
 
-1、职责链模式 Chain of Responsibility（3）
-2、命令模式Command（4）
-3、解释器模式 Interpreter （1）
-4、迭代器模式 Iterator （5）
-5、中介者模式 Mediator （2）
-6、备忘录模式 Memento （2）
-7、观察者模式 Observer （5）
-8、状态模式 State （3）
-9、策略模式 Strategy （4）
-10、模板方法模式 Template Method （3）
-11、访问者模式 Visitor （1）
+- 1、职责链模式 Chain of Responsibility（3）
+- 2、命令模式Command（4）
+- 3、解释器模式 Interpreter （1）
+- 4、迭代器模式 Iterator （5）
+- 5、中介者模式 Mediator （2）
+- 6、备忘录模式 Memento （2）
+- 7、观察者模式 Observer （5）
+- 8、状态模式 State （3）
+- 9、策略模式 Strategy （4）
+- 10、模板方法模式 Template Method （3）
+- 11、访问者模式 Visitor （1）
 
 ## 设计模式原则
 
