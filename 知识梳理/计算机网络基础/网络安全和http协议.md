@@ -44,7 +44,7 @@ CSRF（Cross-site request forgery）跨站请求伪造：攻击者诱导受害�
 
 1、url参数使用encodeURIComponent方法转义
 
-2、尽量不是有InnerHtml插入HTML内容
+2、尽量不使用InnerHtml插入HTML内容
 
 3、使用特殊符号、标签转义符。
 
@@ -93,6 +93,7 @@ DDoS又叫分布式拒绝服务，全称 Distributed Denial of Service，其原�
 第三步：客户端收到SYN和ACK，向服务端发送一个ACK报文,客户端转为established状态，此时服务端收到ACK报文后也处于established状态，此时双方已建立了连接
 
 为什么需要三次握手：确保客户端和服务端都有接收和发送的能力。
+
 ### http四次挥手
 
 刚开始双方都处于 establised 状态，假如是客户端先发起关闭请求，则：

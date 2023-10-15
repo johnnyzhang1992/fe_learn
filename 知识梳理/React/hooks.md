@@ -123,7 +123,7 @@ useEffect 的依赖数组，第二次变化时，执行上次的返回函数。�
 - 清理 Effects
 - 运行 Effects
 
-注意，在渲染之后，React 清理了 LayoutEffects，使其紧接着运行。浏览器然后绘制屏幕，之后React清理 Effects 并紧接着运行它。
+注意，在渲染之后，React 清理了 LayoutEffects，使其紧接着运行。浏览器然后绘制屏幕，之后React清理 Effects 并紧接着运行它。(父子组件：LayoutEffect和Effects 都是先清除再运行，先子后父)
 
 挂载和更新之间的主要区别是：
 
