@@ -1,4 +1,6 @@
-#### 一、W3C对HTML5的需求整体原则：
+# HTML5 相关
+
+## 一、W3C对HTML5的需求整体原则
 
 > - 新特性应该基于 HTML、CSS、DOM 以及 JavaScript。
 > - 减少对外部插件的需求（比如 Flash）
@@ -7,28 +9,28 @@
 > - HTML5 应该独立于设备
 > - 开发进程应对公众透明
 
-#### 二、什么是HTML:
+## 二、什么是HTML
 
 - HTML是创建网页的标准标记语言
 - HTML描述了使用标记的网页结构
 - HTML元素由标签显示
 - 浏览器不会显示HTML标签，而是使用它们呈现页面的内容
 
-#### 三、DOCTYPE声明
+## 三、DOCTYPE声明
 
-```
+```html
 <!Doctype html>
 ```
 
-#### 四、字符编码声明：
+## 四、字符编码声明
 
-```
+```html
 <meta charset="UTF-8">   //不写的话HTML5默认也是UTF-8
 ```
 
 - 一键生成的网页结构：
 
-```
+```html
 <!DOCTYPE html> //
 <html>
 <head>
@@ -41,7 +43,7 @@
 </html>
 ```
 
-#### 五、新增的语义/结构化标签 Semantic
+## 五、新增的语义/结构化标签 Semantic
 
 | 标签                              | 标签                                     |
 | --------------------------------- | ---------------------------------------- |
@@ -53,9 +55,7 @@
 | <nav> 导航                        | <section> 在文档中定义部分               |
 | <summary>                         | <time>                                   |
 
-
-
-```
+```html
 <figure>
 //img和figcaption可以组合放在figure里
   <img src="pic_mountain.jpg" alt="The Pulpit Rock" width="304" height="228">
@@ -63,7 +63,7 @@
 </figure>
 ```
 
-#### 六、HTML4 到HTML5语义化标签迁移
+## 六、HTML4 到HTML5语义化标签迁移
 
 | HTML4                       | HTML5     |
 | --------------------------- | --------- |
@@ -75,7 +75,7 @@
 
 - 这也是为什么识别不了的元素通过 HTML5Shiv自动转换识别啦
 
-#### 七、新增的input类型和属性
+## 七、新增的input类型和属性
 
 | 类型type       | 属性attribute    |
 | -------------- | ---------------- |
@@ -97,15 +97,15 @@
 |                | mutiple          |
 | 其他           | 其他             |
 
-#### 八、新的图形标签：
+## 八、新的图形标签
 
-###### SVG
+### SVG
 
 - 代表可缩放矢量图形
 - SVG用于为Web定义图形
 - SVG是W3C的建议
 
-##### SVG与Canvas区别
+### SVG与Canvas区别
 
 - SVG适用于描述XML中的2D图形的语言
 - Canvas随时随地绘制2D图形(使用JavaScript)
@@ -133,14 +133,14 @@
 
 - 没事，近期正在钻研SVG，有合适的demo我会集中起来发文，记得常来看看寡人~
 
-#### 九、新的多媒体标签
+## 九、新的多媒体标签
 
 | video  | audio |
 | ------ | ----- |
 | source | embed |
 | track  |       |
 
-```
+```html
 <audio controls>
 <!--source多配合audio video内部标签使用 -->
    <source src="horse.ogg" type="audio/ogg">
@@ -154,7 +154,7 @@
 <embed src="" />
 ```
 
-#### 十、新的HTML5的API
+## 十、新的HTML5的API
 
 > - (Application Programming Interface)--应用程序编程接口
 
@@ -165,27 +165,27 @@
 - HTML Web Workers web工作者
 - HTNL SSE
 
-#### 十一、浏览器的支持度
+## 十一、浏览器的支持度
 
 - 所有现代浏览器都支持HTML5
 - 另外，对于新旧浏览器，无法识别的元素，作为内联自动处理
 
-#### 十二、语义元素转换为块元素：
+## 十二、语义元素转换为块元素
 
 - HTML5新定义了8个新的语义化元素，全都是块元素
 - 如果像确保新老浏览器都支持，我们可以手动设置CSS样式
 
-```
+```css
 header, section, footer, aside, nav, main, article, figure {
     display: block; 
 }
 ```
 
-#### 十三、可以自定义标签名字
+## 十三、可以自定义标签名字
 
 - 自定义标签和style样式
 
-```
+```css
 <style>
     display: block;
     width: 400px;
@@ -206,16 +206,14 @@ header, section, footer, aside, nav, main, article, figure {
 </body>
 ```
 
+## 高能预警：傻缺IE8(及以前)不允许未知元素
 
-
-#### 高能预警：傻缺IE8(及以前)不允许未知元素
-
--  [HTML5Shiv](http://www.bootcdn.cn/html5shiv/)是一个针对 IE 浏览器的 HTML5 JavaScript 补丁，目的是让 IE 识别并支持 HTML5 元素。
+- [HTML5Shiv](http://www.bootcdn.cn/html5shiv/)是一个针对 IE 浏览器的 HTML5 JavaScript 补丁，目的是让 IE 识别并支持 HTML5 元素。
 - HTML5Shiv包裹在<head>元素里，
 - 是一个js外部文件
 - 在使用HTML5新元素就可以引入它了
 
-```
+```html
 <head>
 // 下面是HTML的条件注释判断。只给懂的人...呸、浏览器看
   <!--[if lt IE 9]>
@@ -235,7 +233,7 @@ header, section, footer, aside, nav, main, article, figure {
 </body>
 ```
 
-#### 十四、HTML5删除/废弃不能用的元素
+## 十四、HTML5删除/废弃不能用的元素
 
 | 删除的元素                                                   | 被以下替代          |
 | ------------------------------------------------------------ | ------------------- |
@@ -252,18 +250,18 @@ header, section, footer, aside, nav, main, article, figure {
 | <strike> 文本添加删除线                                      | CSS样式，<s>或<del> |
 | <tt> 定义打字机文本                                          | CSS样式             |
 
-```
+```html
 <acronym title="World Wide Web">WWW</acronym> //换成了abbr
 <basefont color="red" size="5" />  //CSS样式替代
 <frame></frame>
 <frameset></frameset> //该标签对网页可用性的负面影响
 ```
 
-#### 十五、其他细节
+## 十五、其他细节
 
 - 闭合标签，双标签不写那个闭合的标签不会出现解析错误，但是建议闭合
 
-```
+```html
 <section>
   <p>This is a paragraph.  //没有</p>
   <p>This is a paragraph.
@@ -272,18 +270,18 @@ header, section, footer, aside, nav, main, article, figure {
 
 - 单标签元素建议加 /来闭合；但在XHTML和XML文档中是必须要加的
 
-```
+```html
 <meta charset="utf-8">
 <meta charset="utf-8" />  //两个都行
 ```
 
-- HTML5元素命名 & class等属性名允许混合使用大写和小写字母，但建议用小写 
+- HTML5元素命名 & class等属性名允许混合使用大写和小写字母，但建议用小写
   - 1.混合使用本身就不符合命名习惯
   - 2.视觉更干净
   - 3.小写更容易编写
 - 引号括起来的属性现在允许去掉，下面的例子都不会报错，
 
-```
+```html
 <table class="striped">  //建议用
 <table class=striped>  //不建议用
 <table class=table striped>  //更不建议用
@@ -291,7 +289,7 @@ header, section, footer, aside, nav, main, article, figure {
 
 - 在HTML5标准里，<html>,<body>,<header>标签甚至是可以省略的，但不建议哦~
 
-```
+```html
 <!DOCTYPE html>
 <head>
   <title>Page Title</title>
@@ -303,26 +301,23 @@ header, section, footer, aside, nav, main, article, figure {
 
 - HTML5通过meta标签达到监听并适配设备屏幕的布局
 
-```
+```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
-- 扩展名.html和.htm的差异： 
+- 扩展名.html和.htm的差异：
 
   - 解析方面是没有区别的。任何浏览器Wen服务器都会将它们视为HTML
   - 两者的差异体现在文化发展层面：
 
-  ```
+  ```html
   .htm 可以察觉早期讲扩展名限制为3个字符的DOS系统
   .html 不会特定去识别Unix操作系统的这个扩展名字符限制
   ```
 
   - 技术层面的差异：
 
-```
-* 当URL没有指定文件名时(比如：https://www.w3schools.com/css/)，服务器将返回默认的文件名，通用的默认文件名是：index.html、index.htm、default.html、和default.html
-* 但如果你的服务器仅配置了“index.html”作为默认文件名，那么你的文件就必须命名index.html，不能用index.htm
-* 不过服务器可以配置多个默认的文件名，所以你可以根据需要设置多个默认文件名
-* 总而言之，HTML文件的完整扩展名是.html，我们没有理由不用它啊~~~
-```
-
+- 当URL没有指定文件名时(比如：<https://www.w3schools.com/css/)，服务器将返回默认的文件名，通用的默认文件名是：index.html、index.htm、default.html、和default.html>
+- 但如果你的服务器仅配置了“index.html”作为默认文件名，那么你的文件就必须命名index.html，不能用index.htm
+- 不过服务器可以配置多个默认的文件名，所以你可以根据需要设置多个默认文件名
+- 总而言之，HTML文件的完整扩展名是.html，我们没有理由不用它啊~~~

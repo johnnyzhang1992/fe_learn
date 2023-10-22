@@ -232,7 +232,7 @@ url-loader: 功能类似 file-loader,但是文件大小低于指定的限制时�
 ### 15、Plugins
 
 plugins和loader很容易搞混，都是外部引用有什么区别呢？ 事实上他们是两个完全不同的东西。这么说**loaders负责的是处理源文件的**如css、jsx，**一次处理一个文件**。**而plugins并不是直接操作单个文件，它直接对整个构建过程起作用**下面列举了一些我们常用的plugins和他的用法
-**ExtractTextWebpackPlugin:** 它会将入口中引用css文件，都打包都独立的css文件中，而不是内嵌在js打包文件中。下面是他的应用
+**ExtractTextWebpackPlugin:** 它会将入口中引用css文件，都打包到独立的css文件中，而不是内嵌在js打包文件中。下面是他的应用
 
 ```js
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
