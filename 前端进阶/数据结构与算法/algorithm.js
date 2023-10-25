@@ -72,4 +72,5 @@ const insertSort = (arr = [], type = "increase") => {
   }
   return arr;
 };
-console.log(insertSort([3, 1, 2, 5, 9, 4],'aa'));
+console.log(insertSort([3, 1, 2, 5, 9, 4], "aa"));
+
