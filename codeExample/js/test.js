@@ -48,9 +48,9 @@ console.log(reduceFlat(testArr));
 // [...new Set([1,2,3,2,3])]
 // indexof 查询 === -1 插入，否则跳过；includes; 使用map .has()方法
 
+// 防抖
 const deboude = function (fn, wait) {
   let timer = null;
-
   return function (...args) {
     let context = this;
     if (timer) {
@@ -62,7 +62,7 @@ const deboude = function (fn, wait) {
     }, wait);
   };
 };
-
+// 节流
 const throttle = function (fn, wait) {
   let curTime = Date.now();
   return function (...args) {
@@ -104,47 +104,6 @@ class Scheduler {
   }
 }
 
-const timeout = (time) =>
-  new Promise((resolve) => {
-    setTimeout(resolve, time);
-  });
-
-const print = function (i) {
-  setTimeout(function () {
-    console.log(Date.now(), i);
-  }, 1000);
-};
-// new Promise((resolve, reject) => {
-//   for (var i = 0; i < 5; i++) {
-//     //   print(i);
-//     (function (i) {
-//       setTimeout(function () {
-//         console.log(Date.now(), i);
-//         if (i === 4) {
-//           resolve(5);
-//         }
-//       }, 1000);
-//     })(i);
-//   }
-// }).then((i) => {
-//   console.log(Date.now(), i);
-// });
-
-const asyncPrint = (i) => {
-  return new Promise((resolve) => {
-    setTimeout(function () {
-      console.log(Date.now(), i);
-      resolve(i);
-    }, 1000);
-  });
-};
-const printAll = async () => {
-  for (var i = 0; i < 5; i++) {
-    await asyncPrint(i);
-  }
-  console.log(Date.now(), i);
-};
-printAll();
 const get = (obj, path, defaultValue) => {
   const keys = path.split(".");
   let value = obj;
