@@ -60,29 +60,33 @@ const bfs = (root) => {
     node.right && arr.push(node.right);
   }
 };
-// const bfs = (root) => {
-//   if (!root) return;
-//   // 上一层二叉树节点
-//   let arr = [root];
-//   // 最新一层二叉树节点
-//   let newArr = [];
-//   const loop = () => {
-//     if (arr.length > 0) {
-//       for (let item in arr) {
-//         const node = arr[item];
-//         if (node) {
-//           console.log(node.val);
-//           node.left && newArr.push(node.left);
-//           node.right && newArr.push(node.right);
-//         }
-//       }
-//       if (newArr.length > 0) {
-//         arr = [...newArr];
-//         newArr = [];
-//         loop();
-//       }
-//     }
-//   };
-//   loop();
-// };
+const bfs1 = (root) => {
+  if (!root) return;
+  // 上一层二叉树节点
+  let arr = [root];
+  // 最新一层二叉树节点
+  let newArr = [];
+  let deep = 1;
+  const loop = () => {
+    if (arr.length > 0) {
+      for (let item in arr) {
+        const node = arr[item];
+        if (node) {
+          console.log(node.val);
+          node.left && newArr.push(node.left);
+          node.right && newArr.push(node.right);
+        }
+      }
+      if (newArr.length > 0) {
+        console.log("deep:", deep);
+        deep++;
+        arr = [...newArr];
+        newArr = [];
+        loop();
+      }
+    }
+  };
+  loop();
+};
 bfs(tree);
+bfs1(tree)
