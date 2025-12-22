@@ -41,29 +41,46 @@
 
 parseUrl("http://test.com:8080?name=1&password=2#page1");
 
-结果：
-match=[ 
-  'http://test.com:8080?name=1&password=2#page1',
-  'http://test.com:8080',
-  'http:',
-  'test.com:8080',
-  'test.com',
-  ':8080',
-  undefined,
-  '?name=1&password=2',
-  '#page1',
-  index: 0,
-  input: 'http://test.com:8080?name=1&password=2#page1' 
-]
+// 结果：
+// match=[ 
+//   'http://test.com:8080?name=1&password=2#page1',
+//   'http://test.com:8080',
+//   'http:',
+//   'test.com:8080',
+//   'test.com',
+//   ':8080',
+//   undefined,
+//   '?name=1&password=2',
+//   '#page1',
+//   index: 0,
+//   input: 'http://test.com:8080?name=1&password=2#page1' 
+// ]
 
-result={ 
-  hash: '#page1',
-  search: '?name=1&password=2',
-  pathname: '',
-  port: ':8080',
-  hostname: 'test.com',
-  host: 'test.com:8080',
-  protocol: 'http:',
-  origin: 'http://test.com:8080',
-  href: 'http://test.com:8080?name=1&password=2#page1' 
+// result={ 
+//   hash: '#page1',
+//   search: '?name=1&password=2',
+//   pathname: '',
+//   port: ':8080',
+//   hostname: 'test.com',
+//   host: 'test.com:8080',
+//   protocol: 'http:',
+//   origin: 'http://test.com:8080',
+//   href: 'http://test.com:8080?name=1&password=2#page1' 
+// }
+
+// 尾调用
+function fibonacci(n, a = 1, b = 1) { 
+  if (n <= 1) return b;
+  return fibonacci(n - 1, b, a + b);
 }
+
+console.log(fibonacci(8))
+
+// 8 1 1 
+// 7 1 2
+// 6 2 3
+// 5 3 5
+// 4 5 8
+// 3 8 13
+// 2 13 21
+// 1 21 34

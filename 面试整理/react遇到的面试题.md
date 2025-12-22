@@ -8,6 +8,39 @@
 - 父组件和子组件 componentDidMount 哪个县执行
 - 高阶组件
 - hooks
+- 常用的 hooks
+- React.memo 和useMemo的区别
+- 自定义hook要注意啥
+- useEffect 和useLayoutEffect 区别
+- 自定义组件的认识
+
+## 常用的 hooks
+
+- useState
+- useEffect
+- useRef
+- useMemo
+- useCallback
+- useReducer
+- useLayoutEffect
+
+前三个比较常用，状态管理、副作用、缓存数据或Dom引用；3，4用来做一些计算缓存和函数缓存，方便性能优化。
+useReducer 针对稍微复杂有关联的一些状态，拆分为State管理比较麻烦时，可以使用。
+
+## React.memo 和useMemo
+
+都被用来做缓存。前者是缓存组件，后者缓存一个计算结果（也可以缓存组件，但是有缺陷）。
+useMemo 存在第二个依赖参数，当依赖没有变化时，obj 不会重复计算。若缓存组件，组件的props可能取不到最新的值。
+React.memo 是对props进行浅比对，类似 class组件的 pureComponent
+
+```jsx
+const [a, setA] = useState('')
+const obj = useMemo(()=>{
+    return <Components a={a} />;
+}, [])
+
+React.memo(<Components></Components>)
+```
 
 ## setState
 
